@@ -1,7 +1,19 @@
 public class Main {
-    public static void main (String[] args) {
-        System.out.println("Mastering Java");
+    public static void main(String[] args) {
+        Cat myCat1 = new Cat();
+        myCat1.sayHello();
+    }
+}
 
-        System.out.println("add, commit, push");
+class Animal {
+    void sayHello() {
+        System.out.println("Hello!");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    void sayHello() {
+        System.out.println("Meow!");
     }
 }
