@@ -1,41 +1,21 @@
-import java.lang.Math;
-
 public class Main {
     public static void main(String[] args) {
-        Shape square = new Square(8);
-        Shape circle = new Circle(6);
-
-        System.out.println(square.calculateSurface());
-        System.out.println(circle.calculateSurface());
+        EmailClient client = new EmailClient();
+        EmailClient.Email email = client.composeEmail("Thank you for subscription!");
+        System.out.println(email.content);
     }
 }
 
-abstract class Shape {
-    abstract double calculateSurface();
-}
+class EmailClient {
+    class Email {
+        String content;
 
-class Square extends Shape {
-    double sideLength;
-
-    Square(double sideLength) {
-        this.sideLength = sideLength;
+        Email(String content) {
+            this.content = content;
+        }
     }
 
-    @Override
-    public double calculateSurface() {
-        return sideLength * sideLength;
-    }
-}
-
-class Circle extends Shape {
-    double radius;
-
-    Circle(double radius) {
-        this.radius = radius;
-    }
-
-    @Override
-    public double calculateSurface() {
-        return Math.PI * radius * radius;
+    public Email composeEmail(String messageContent) {
+        return new Email(messageContent);
     }
 }
