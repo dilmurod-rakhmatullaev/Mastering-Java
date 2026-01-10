@@ -1,31 +1,26 @@
 public class Main {
-    public static void launchIntoSky(CanFly flyingObject){
-        flyingObject.soar();
-    }
-
     public static void main(String[] args) {
-        Aircraft aircraft = new Aircraft();
-        Eagle eagle = new Eagle();
+        Renderable shape = new Renderable() {
+            @Override
+            public void paint() {
+                System.out.println("Painting smth");
+            }
+        };
 
-        launchIntoSky(aircraft);
-        launchIntoSky(eagle);
+        shape.paint();
+        shape.adjustScale();
+        Renderable.validateColorPalette();
     }
 }
 
-interface CanFly {
-    void soar();
-}
+interface Renderable {
+    void paint();
 
-class Aircraft implements CanFly {
-    @Override
-    public void soar() {
-        System.out.println("Самолёт взлетает!");
+    default void adjustScale() {
+        System.out.println("Размер объекта скорректирован по умолчанию.");
     }
-}
 
-class Eagle implements CanFly {
-    @Override
-    public void soar() {
-        System.out.println("Орёл парит!");
+    static void validateColorPalette() {
+        System.out.println("Цветовая палитра проверена, всё в порядке!");
     }
 }
