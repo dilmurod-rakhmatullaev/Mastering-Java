@@ -1,6 +1,7 @@
 public class Main {
     public static void main(String[] args) {
         Cat myCat1 = new Cat("Charlie");
+        System.out.println(myCat1.name);
         myCat1.sayHello();
     }
 }
