@@ -1,21 +1,31 @@
 public class Main {
+    public static void launchIntoSky(CanFly flyingObject){
+        flyingObject.soar();
+    }
+
     public static void main(String[] args) {
-        EmailClient client = new EmailClient();
-        EmailClient.Email email = client.composeEmail("Thank you for subscription!");
-        System.out.println(email.content);
+        Aircraft aircraft = new Aircraft();
+        Eagle eagle = new Eagle();
+
+        launchIntoSky(aircraft);
+        launchIntoSky(eagle);
     }
 }
 
-class EmailClient {
-    class Email {
-        String content;
+interface CanFly {
+    void soar();
+}
 
-        Email(String content) {
-            this.content = content;
-        }
+class Aircraft implements CanFly {
+    @Override
+    public void soar() {
+        System.out.println("Самолёт взлетает!");
     }
+}
 
-    public Email composeEmail(String messageContent) {
-        return new Email(messageContent);
+class Eagle implements CanFly {
+    @Override
+    public void soar() {
+        System.out.println("Орёл парит!");
     }
 }
