@@ -1,14 +1,20 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
 public class Main {
     public static void main(String[] args) {
-        Set<String> names = new TreeSet<>();
+        List<String> fruits = new ArrayList<>();
 
-        names.add("Борис");
-        names.add("Алексей");
-        names.add("Виктор");
+        fruits.add("яблоко");
+        fruits.add("груша");
+        fruits.add("яблоко");
+        fruits.add("слива");
+        fruits.add("груша");
 
-        System.out.println(names);
+        Set<String> onlyFruits = new TreeSet<>(fruits);
+
+        System.out.println(onlyFruits);
     }
 }
