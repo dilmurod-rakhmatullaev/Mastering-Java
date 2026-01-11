@@ -1,19 +1,15 @@
-import java.util.List;
-import java.util.ArrayList;
+import java.util.TreeMap;
 
 public class Main {
     public static void main(String[] args) {
-        List<String> cinemaName = new ArrayList<>();
+        TreeMap<String, Integer> days = new TreeMap<>();
 
-        cinemaName.add("Титаник");
-        cinemaName.add("Матрица");
-        cinemaName.add("Интерстеллар");
-        cinemaName.add("Матрица");
+        days.put("Monday", 1);
+        days.put("Tuesday", 2);
+        days.put("Wednesday", 3);
 
-        System.out.println(cinemaName.indexOf("Матрица") + 1);
-        System.out.println(cinemaName.contains("Аватар"));
-        cinemaName.clear();
-
-        System.out.println(cinemaName);
+        for (var day : days.entrySet()) {
+            System.out.println("День: " + day.getKey() + ", Номер: " + day.getValue());
+        }
     }
 }
