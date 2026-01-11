@@ -2,14 +2,14 @@ import java.util.TreeMap;
 
 public class Main {
     public static void main(String[] args) {
-        TreeMap<String, Integer> days = new TreeMap<>();
+        TreeMap<String, Integer> fruits = new TreeMap<>();
 
-        days.put("Monday", 1);
-        days.put("Tuesday", 2);
-        days.put("Wednesday", 3);
+        fruits.put("pear", 6);
+        fruits.put("apple", 2);
+        fruits.put("banana", 4);
 
-        for (var day : days.entrySet()) {
-            System.out.println("День: " + day.getKey() + ", Номер: " + day.getValue());
+        for (var fruit : fruits.entrySet()) {
+            System.out.println(fruit.getKey() + fruit.getValue());
         }
     }
 }
