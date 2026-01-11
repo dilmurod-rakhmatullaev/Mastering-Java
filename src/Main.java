@@ -1,16 +1,13 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
     public static void main(String[] args) {
-        new SystemCore();
-        new SystemCore();
-    }
-}
+        List<String> fruits = new ArrayList<>();
+        fruits.add("Яблоко");
+        fruits.add("Банан");
+        fruits.add("Груша");
 
-class SystemCore {
-    static {
-        System.out.println("Система: глобальная инициализация завершена.");
-    }
-
-    {
-        System.out.println("Компонент: индивидуальная настройка завершена.");
+        System.out.println(fruits);
     }
 }
