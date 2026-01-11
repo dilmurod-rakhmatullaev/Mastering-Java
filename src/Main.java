@@ -3,16 +3,17 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        List<String> subjects = new ArrayList<>();
-        subjects.add("Математика");
-        subjects.add("Физика");
-        subjects.add("Информатика");
+        List<String> cinemaName = new ArrayList<>();
 
-        subjects.add(0, "Английский");
-        subjects.remove("Физика");
+        cinemaName.add("Титаник");
+        cinemaName.add("Матрица");
+        cinemaName.add("Интерстеллар");
+        cinemaName.add("Матрица");
 
-        for (String subject : subjects) {
-            System.out.println(subject);
-        }
+        System.out.println(cinemaName.indexOf("Матрица") + 1);
+        System.out.println(cinemaName.contains("Аватар"));
+        cinemaName.clear();
+
+        System.out.println(cinemaName);
     }
 }
