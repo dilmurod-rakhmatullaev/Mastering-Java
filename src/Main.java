@@ -1,15 +1,14 @@
-import java.util.TreeMap;
+import java.util.Set;
+import java.util.TreeSet;
 
 public class Main {
     public static void main(String[] args) {
-        TreeMap<String, Integer> fruits = new TreeMap<>();
+        Set<String> names = new TreeSet<>();
 
-        fruits.put("pear", 6);
-        fruits.put("apple", 2);
-        fruits.put("banana", 4);
+        names.add("Борис");
+        names.add("Алексей");
+        names.add("Виктор");
 
-        for (var fruit : fruits.entrySet()) {
-            System.out.println(fruit.getKey() + fruit.getValue());
-        }
+        System.out.println(names);
     }
 }
