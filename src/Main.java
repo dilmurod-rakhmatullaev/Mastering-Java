@@ -1,20 +1,13 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        List<String> fruits = new ArrayList<>();
+        List<String> colors = new LinkedList<>();
 
-        fruits.add("яблоко");
-        fruits.add("груша");
-        fruits.add("яблоко");
-        fruits.add("слива");
-        fruits.add("груша");
+        colors.add("красный");
+        colors.add("зелёный");
+        colors.add("синий");
 
-        Set<String> onlyFruits = new TreeSet<>(fruits);
-
-        System.out.println(onlyFruits);
+        System.out.println(colors.get(1));
     }
 }
