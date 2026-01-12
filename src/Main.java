@@ -2,14 +2,23 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        Map<String, String> dictionary = new HashMap<>();
+        Set<String> languages = new HashSet<>();
 
-        dictionary.put("dog", "собака");
-        dictionary.put("cat", "кошка");
-        dictionary.put("bird", "птица");
+        languages.add("java");
+        languages.add("python");
+        languages.add("c++");
+        languages.add("javascript");
 
-        for (Map.Entry<String, String> entry : dictionary.entrySet()) {
-            System.out.println(entry.getKey() + " = " + entry.getValue());
+        Iterator<String> it = languages.iterator();
+        while (it.hasNext()) {
+            String line = it.next();
+            if (line.contains("+")) {
+                it.remove();
+            }
+        }
+
+        for (String language : languages) {
+            System.out.println(language);
         }
     }
 }
