@@ -2,23 +2,13 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        Set<String> languages = new HashSet<>();
+        Queue<Integer> tasks = new LinkedList<>();
 
-        languages.add("java");
-        languages.add("python");
-        languages.add("c++");
-        languages.add("javascript");
+        tasks.add(5);
+        tasks.add(15);
+        tasks.add(25);
 
-        Iterator<String> it = languages.iterator();
-        while (it.hasNext()) {
-            String line = it.next();
-            if (line.contains("+")) {
-                it.remove();
-            }
-        }
-
-        for (String language : languages) {
-            System.out.println(language);
-        }
+        System.out.println(tasks.peek());
+        System.out.println(tasks.size());
     }
 }
