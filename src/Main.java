@@ -2,12 +2,20 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        List<String> colors = new LinkedList<>();
+        List<Integer> things = new ArrayList<>();
+        Set<Integer> uniqueThings = new HashSet<>();
 
-        colors.add("красный");
-        colors.add("зелёный");
-        colors.add("синий");
+        things.add(3);
+        things.add(7);
+        things.add(3);
+        things.add(9);
 
-        System.out.println(colors.get(1));
+        uniqueThings.add(3);
+        uniqueThings.add(7);
+        uniqueThings.add(3);
+        uniqueThings.add(9);
+
+        System.out.println(things.size());
+        System.out.println(uniqueThings.size());
     }
 }
