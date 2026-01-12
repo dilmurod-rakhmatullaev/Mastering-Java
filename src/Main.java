@@ -2,20 +2,14 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        List<Integer> things = new ArrayList<>();
-        Set<Integer> uniqueThings = new HashSet<>();
+        Map<String, String> dictionary = new HashMap<>();
 
-        things.add(3);
-        things.add(7);
-        things.add(3);
-        things.add(9);
+        dictionary.put("dog", "собака");
+        dictionary.put("cat", "кошка");
+        dictionary.put("bird", "птица");
 
-        uniqueThings.add(3);
-        uniqueThings.add(7);
-        uniqueThings.add(3);
-        uniqueThings.add(9);
-
-        System.out.println(things.size());
-        System.out.println(uniqueThings.size());
+        for (Map.Entry<String, String> entry : dictionary.entrySet()) {
+            System.out.println(entry.getKey() + " = " + entry.getValue());
+        }
     }
 }
