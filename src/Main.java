@@ -1,20 +1,29 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ListIterator;
 
 public class Main {
     public static void main(String[] args) {
-        List<Integer> numbers = new ArrayList<>(List.of(1, -2, 3, -4, 5));
-        List<Integer> digits = new ArrayList<>(List.of(-6, 7, -8, 9, 0));
+        List<String> animals = new ArrayList<>();
+        animals.add("cat");
+        animals.add("dog");
+        animals.add("bird");
+        animals.add("fish");
 
-        numbers.removeIf(n -> n < 0);
-        System.out.println(numbers);
+        // Получаем ListIterator для безопасного прохода и модификации списка
+        ListIterator<String> iterator = animals.listIterator();
 
-        Iterator<Integer> it = digits.iterator();
-        while (it.hasNext()) {
-            int n = it.next();
-            if (n < 0) {
-                it.remove();
+        // Итерируемся по списку
+        while (iterator.hasNext()) {
+            String animal = iterator.next();
+            if (animal.length() == 3) {
+                iterator.remove();
+                iterator.add("pet");
             }
         }
-        System.out.println(digits);
+
+
+        // После обработки выводим итоговый список на экран
+        System.out.println(animals);
     }
 }
