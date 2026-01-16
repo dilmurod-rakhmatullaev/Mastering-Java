@@ -3,12 +3,12 @@ import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
-        List<Integer> readings = List.of(3, 7, 2, 9, 4, 6, 8, 5);
-        List<String> oddLabels = readings.stream()
-                .filter(n -> n % 2 != 0)
-                .map(n -> "Odd: " + n)
-                .collect(Collectors.toList());
+        List<Integer> sales = List.of(5, 7, 5, 9, 7, 11, 13, 9, 15);
+        List<Integer> top4Unique = sales.stream()
+                        .distinct()
+                                .limit(4)
+                                        .collect(Collectors.toList());
 
-        System.out.println(oddLabels);
+        System.out.println(top4Unique);
     }
 }
