@@ -3,12 +3,12 @@ import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
-        List<String> items = List.of("apple", "banana", "apricot", "cherry", "avocado");
-        List<Integer> lengths = items.stream()
-                .filter(n -> n.startsWith("a"))
-                .map(n -> n.length())
+        List<Integer> readings = List.of(3, 7, 2, 9, 4, 6, 8, 5);
+        List<String> oddLabels = readings.stream()
+                .filter(n -> n % 2 != 0)
+                .map(n -> "Odd: " + n)
                 .collect(Collectors.toList());
 
-        System.out.println(lengths);
+        System.out.println(oddLabels);
     }
 }
