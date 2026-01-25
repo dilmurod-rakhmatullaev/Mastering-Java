@@ -1,23 +1,17 @@
-import java.util.Arrays;
 import java.util.List;
-import java.util.OptionalDouble;
+import java.util.Optional;
 
 public class Main {
     public static void main(String[] args) {
-        List<Integer> prices = Arrays.asList(100, 250, 80, 40);
+        List<Integer> numbers = List.of(1, 2, 3, 4, 5);
+        Optional<Integer> sum1 = numbers.stream()
+                .reduce(Integer::sum);
 
-        OptionalDouble averageOpt = prices.stream()
-                .mapToInt(Integer::intValue)
-                .average();
+        System.out.println(sum1);
 
-        double average = averageOpt.orElse(0.0);
+        int sum2 = numbers.stream()
+                .reduce(0, (a, b) -> a + b);
 
-        int min = prices.stream()
-                .mapToInt(Integer::intValue)
-                .min()
-                .orElse(-1);
-
-        System.out.println("Средняя стоимость проданных товаров: " + average);
-        System.out.println("Минимальная цена дня: " + min);
+        System.out.println(sum2);
     }
 }
