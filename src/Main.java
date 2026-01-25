@@ -1,16 +1,23 @@
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
+import java.util.OptionalDouble;
 
 public class Main {
     public static void main(String[] args) {
-        List<Integer> readings = Arrays.asList(10, 15, 20, 25, 30);
-        List<String> report = readings.stream()
-                .filter(n -> n % 10 == 0)
-                .peek(n -> System.out.println("Значение " + n + " прошло проверку"))
-                .map(String::valueOf)
-                .collect(Collectors.toList());
+        List<Integer> prices = Arrays.asList(100, 250, 80, 40);
 
-        System.out.println(report);
+        OptionalDouble averageOpt = prices.stream()
+                .mapToInt(Integer::intValue)
+                .average();
+
+        double average = averageOpt.orElse(0.0);
+
+        int min = prices.stream()
+                .mapToInt(Integer::intValue)
+                .min()
+                .orElse(-1);
+
+        System.out.println("Средняя стоимость проданных товаров: " + average);
+        System.out.println("Минимальная цена дня: " + min);
     }
 }
