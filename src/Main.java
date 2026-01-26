@@ -1,13 +1,18 @@
 import java.util.List;
-import java.util.stream.Stream;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
-        List<String> firstBasketFruits = List.of("Яблоко", "Груша");
-        List<String> secondBasketFruits = List.of("Банан", "Апельсин");
+        try {
+            List<String> animals = List.of("кота", null, "собаку");
+        } catch (NullPointerException e) {
+            System.out.println("Null запрещён: NullPointerException");
+        }
 
-        Stream<String> allSaladIngredients = Stream.concat(firstBasketFruits.stream(), secondBasketFruits.stream());
-
-        allSaladIngredients.forEach(System.out::println);
+        try {
+            Set<String> objects = Set.of("солнце", "луну", "солнце");
+        } catch (IllegalArgumentException ex) {
+            System.out.println("Дубликаты запрещены: IllegalArgumentException");
+        }
     }
 }
